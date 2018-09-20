@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c69eb52-702e-4d7a-baf9-5b8a00d569a5" name="Default" comment="" />
+    <list default="true" id="7c69eb52-702e-4d7a-baf9-5b8a00d569a5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="RetrofitExample.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -688,12 +691,12 @@
       <workItem from="1492112383953" duration="467000" />
       <workItem from="1492190968617" duration="2270000" />
       <workItem from="1537424083634" duration="179000" />
-      <workItem from="1537424301553" duration="13640000" />
+      <workItem from="1537424301553" duration="13803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24065000" />
+    <option name="totallyTimeSpent" value="24228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
