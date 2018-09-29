@@ -1,7 +1,7 @@
 <?php
 
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'pwd');
+define('DB_PASSWORD', '12OlooJade!@');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'employee_timesheet');
 
