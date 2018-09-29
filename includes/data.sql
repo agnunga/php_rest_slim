@@ -210,3 +210,36 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- tables
+-- Table: messages
+CREATE TABLE messages (
+  id int NOT NULL AUTO_INCREMENT,
+  from_users_id int NOT NULL,
+  to_users_id int NOT NULL,
+  title varchar(100) NOT NULL,
+  message varchar(1000) NOT NULL,
+  sentat timestamp NOT NULL,
+  CONSTRAINT messages_pk PRIMARY KEY (id)
+);
+
+-- Table: users
+CREATE TABLE users (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(100) NOT NULL,
+  email varchar(100) NOT NULL,
+  password text NOT NULL,
+  gender varchar(6) NOT NULL,
+  CONSTRAINT users_pk PRIMARY KEY (id)
+);
+
+-- foreign keys
+-- Reference: messages_users_from (table: messages)
+ALTER TABLE messages ADD CONSTRAINT messages_users_from FOREIGN KEY messages_users_from (to_users_id)
+REFERENCES users (id);
+
+-- Reference: messages_users_to (table: messages)
+ALTER TABLE messages ADD CONSTRAINT messages_users_to FOREIGN KEY messages_users_to (from_users_id)
+REFERENCES users (id);
+
+-- End of file.
