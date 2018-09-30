@@ -40,7 +40,7 @@ class DbOperation
     //Method to send a message to another user
     function sendMessage($from, $to, $title, $message)
     {
-        $stmt = $this->con->prepare("INSERT INTO messages (from_user_id, to_user_id, title, message) VALUES (?, ?, ?, ?);");
+        $stmt = $this->con->prepare("INSERT INTO messages (from_users_id, to_users_id, title, message) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("iiss", $from, $to, $title, $message);
         if ($stmt->execute())
             return true;
@@ -61,7 +61,7 @@ class DbOperation
     //Method to get messages of a particular user
     function getMessages($userid)
     {
-        $stmt = $this->con->prepare("SELECT messages.id, (SELECT users.name FROM users WHERE users.id = messages.from_user_id) as `from`, (SELECT users.name FROM users WHERE users.id = messages.to_user_id) as `to`, messages.title, messages.message, messages.sentat FROM messages WHERE messages.to_user_id = ? ORDER BY messages.sentat DESC;");
+        $stmt = $this->con->prepare("SELECT m.id, (SELECT u.name FROM users u WHERE u.id = m.from_users_id) as `from`, (SELECT u.name FROM users u WHERE u.id = m.to_users_id) as `to`, m.title, m.message, m.sentat FROM messages m WHERE m.to_users_id = ? ORDER BY m.sentat DESC;");
         $stmt->bind_param("i", $userid);
         $stmt->execute();
         $stmt->bind_result($id, $from, $to, $title, $message, $sent);

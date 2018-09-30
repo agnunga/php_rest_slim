@@ -193,6 +193,7 @@ LOCK TABLES `timesheet` WRITE;
 INSERT INTO `timesheet` (`id`, `employee_id`, `date`, `time_from`, `time_to`, `comments`, `activity_id`, `date_submitted`)
 VALUES
 	(1,1,'2018-01-10','09:00:00','16:00:00','',1,'2018-01-13'),
+	(1,1,'2018-01-10','09:00:00','16:00:00','',1,'2018-01-13'),
 	(2,1,'2018-01-11','01:46:00','05:38:00','over time!!',2,'2018-01-11'),
 	(3,1,'2018-01-12','12:30:00','22:12:00','party time',3,'2018-01-13'),
 	(4,3,'2018-01-10','12:00:00','18:22:00',NULL,1,'2018-01-11'),
@@ -219,7 +220,7 @@ CREATE TABLE messages (
   to_users_id int NOT NULL,
   title varchar(100) NOT NULL,
   message varchar(1000) NOT NULL,
-  sentat timestamp NOT NULL,
+  sentat timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT messages_pk PRIMARY KEY (id)
 );
 
